@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact name="TotalWar">
+    <output-path>$PROJECT_DIR$/build/libs/totalwar</output-path>
+    <root id="root">
+      <element id="artifact" artifact-name="resources" />
+      <element id="artifact" artifact-name="Gradle : Was.war (exploded)" />
+      <element id="artifact" artifact-name="Gradle : Was.war" />
+    </root>
+  </artifact>
+</component>

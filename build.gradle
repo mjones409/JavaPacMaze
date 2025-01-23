@@ -1,0 +1,32 @@
+plugins {
+    id "java"
+    id "war"
+    id "org.teavm" version "0.11.0"
+}
+repositories {
+    mavenCentral()
+}
+
+// This is optional, but for real-world applications you need to interact with browser.
+// This dependency provides useful wrappers.
+dependencies {
+    implementation teavm.libs.jsoApis
+}
+
+teavm {
+    all {
+        mainClass = "example.MainClass"
+    }
+    js {
+        addedToWebApp = true
+
+        // this is also optional, default value is <project name>.js
+        targetFileName = "example.js"
+    }
+    wasmGC {
+        addedToWebApp = true
+
+        // this is also optional, default value is <project name>.wasm
+        targetFileName = "example.wasm"
+    }
+}

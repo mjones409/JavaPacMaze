@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact build-on-make="true" name="resources">
+    <output-path>$PROJECT_DIR$/build/libs/exploded/Was.war</output-path>
+    <root id="root">
+      <element id="dir-copy" path="$PROJECT_DIR$/build/resources/main" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Java Pac Maze</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <script type="text/javascript" charset="utf-8" src="wasm-gc/example.wasm-runtime.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.2/p5.min.js"></script>
+    <style>
+        body {
+            background-color: black; /* Set the background color to black */
+            color: white; /* Optional: Set text color to white for better visibility */
+        }
+    </style>
+<body onload="main()">
+<script>
+    let runJava;
+    let player;
+    let enemyRed;
+    let enemyBlue;
+    let enemyPink;
+    let enemyOrange;
+    let enemyGreen;
+    let enemyPurple;
+
+    async function main() {
+        let teavm = await TeaVM.wasmGC.load("wasm-gc/example.wasm");
+        runJava = () => {
+            teavm.exports.main([])
+        };
+    }
+
+    function preload() {
+        player = loadImage("player.png");
+        enemyRed = loadImage("enemyRed.png");
+        enemyBlue = loadImage("enemyBlue.png");
+        enemyOrange = loadImage("enemyOrange.png");
+        enemyPink = loadImage("enemyPink.png");
+        enemyGreen = loadImage("enemyGreen.png");
+        enemyPurple = loadImage("enemyPurple.png");
+    }
+
+    function setup() {
+    }
+
+    function draw() {
+        textAlign(CENTER);
+        runJava();
+    }
+
+    function movePlayer(x, y) {
+        image(player, x, y);
+    }
+
+    function moveEnemyRed(x, y) {
+        image(enemyRed, x, y);
+    }
+
+    function moveEnemyOrange(x, y) {
+        image(enemyOrange, x, y);
+    }
+
+    function moveEnemyPink(x, y) {
+        image(enemyPink, x, y);
+    }
+
+    function moveEnemyBlue(x, y) {
+        image(enemyBlue, x, y);
+    }
+
+    function moveEnemyGreen(x, y) {
+        image(enemyGreen, x, y);
+    }
+
+    function moveEnemyPurple(x, y) {
+        image(enemyPurple, x, y);
+    }
+
+</script>
+</body>
+</head>
+</html>
